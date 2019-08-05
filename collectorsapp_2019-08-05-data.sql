@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: collectorsapp
-# Generation Time: 2019-08-05 14:46:43 +0000
+# Generation Time: 2019-08-05 15:13:50 +0000
 # ************************************************************
 
 
@@ -39,18 +39,18 @@ LOCK TABLES `grocery_item` WRITE;
 
 INSERT INTO `grocery_item` (`id`, `item`, `category`, `price`, `remaining`)
 VALUES
-	(1,'vegetable oil','PANTRY',2,50),
-	(2,'salt','PANTRY',5,30),
-	(3,'olive oil','PANTRY',5,60),
-	(4,'sesame oil','PANTRY',7,5),
-	(5,'balsamic vinegar','PANTRY',9,40),
-	(6,'flour','PANTRY',2,90),
-	(7,'sugar','PANTRY',2,95),
-	(8,'yeast','PANTRY',3,60),
-	(9,'honey','PANTRY',5,40),
-	(10,'maple syrup','FRIDGE',7,45),
-	(11,'oat milk','FRIDGE',2,70),
-	(12,'frozen seafood','FREEZER',14,0);
+	(1,'vegetable oil','PANTRY',200,50),
+	(2,'salt','PANTRY',550,30),
+	(3,'olive oil','PANTRY',650,60),
+	(4,'sesame oil','PANTRY',785,5),
+	(5,'balsamic vinegar','PANTRY',950,40),
+	(6,'flour','PANTRY',200,90),
+	(7,'sugar','PANTRY',200,95),
+	(8,'yeast','PANTRY',350,60),
+	(9,'honey','PANTRY',450,40),
+	(10,'maple syrup','FRIDGE',760,45),
+	(11,'oat milk','FRIDGE',165,70),
+	(12,'frozen seafood','FREEZER',1470,0);
 
 /*!40000 ALTER TABLE `grocery_item` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -75,8 +75,8 @@ LOCK TABLES `grocery_to_do` WRITE;
 
 INSERT INTO `grocery_to_do` (`id`, `item`, `category`, `price`, `from`)
 VALUES
-	(1,'sesame oil','PANTRY',7,'KOREAN MARKET'),
-	(2,'frozen seafood','FREEZER',14,'FISH MARKET');
+	(1,'sesame oil','PANTRY',785,'KOREAN MARKET'),
+	(2,'frozen seafood','FREEZER',1470,'FISH MARKET');
 
 /*!40000 ALTER TABLE `grocery_to_do` ENABLE KEYS */;
 UNLOCK TABLES;
