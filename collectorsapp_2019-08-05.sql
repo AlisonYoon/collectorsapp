@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: collectorsapp
-# Generation Time: 2019-08-05 13:22:34 +0000
+# Generation Time: 2019-08-05 14:10:06 +0000
 # ************************************************************
 
 
@@ -28,9 +28,9 @@ DROP TABLE IF EXISTS `grocery_item`;
 CREATE TABLE `grocery_item` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `item` varchar(255) DEFAULT NULL,
-  `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHERS') NOT NULL,
-  `price` decimal(10,2) unsigned NOT NULL,
-  `left` int(11) DEFAULT NULL,
+  `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHER') NOT NULL,
+  `price` int(11) unsigned NOT NULL,
+  `remaining` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,8 +44,8 @@ DROP TABLE IF EXISTS `grocery_to_do`;
 CREATE TABLE `grocery_to_do` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `item` varchar(255) DEFAULT NULL,
-  `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHERS') DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
+  `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHER') DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
   `from` enum('CO-OP','FRUIT STAND','SCOOPAWAY','KOREAN MARKET','FISH MARKET','AMAZON') DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
