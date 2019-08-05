@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: collectorsapp
-# Generation Time: 2019-08-05 12:57:14 +0000
+# Generation Time: 2019-08-05 13:22:34 +0000
 # ************************************************************
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `grocery_item` (
   `item` varchar(255) DEFAULT NULL,
   `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHERS') NOT NULL,
   `price` decimal(10,2) unsigned NOT NULL,
-  `left` decimal(3,2) DEFAULT NULL,
+  `left` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
