@@ -34,6 +34,26 @@ CREATE TABLE `grocery_item` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `grocery_item` WRITE;
+/*!40000 ALTER TABLE `grocery_item` DISABLE KEYS */;
+
+INSERT INTO `grocery_item` (`id`, `item`, `category`, `price`, `remaining`)
+VALUES
+	(1,'vegetable oil','PANTRY',200,50),
+	(2,'salt','PANTRY',550,30),
+	(3,'olive oil','PANTRY',650,60),
+	(4,'sesame oil','PANTRY',785,5),
+	(5,'balsamic vinegar','PANTRY',950,40),
+	(6,'flour','PANTRY',200,90),
+	(7,'sugar','PANTRY',200,95),
+	(8,'yeast','PANTRY',350,60),
+	(9,'honey','PANTRY',450,40),
+	(10,'maple syrup','FRIDGE',760,45),
+	(11,'oat milk','FRIDGE',165,70),
+	(12,'frozen seafood','FREEZER',1470,0);
+
+/*!40000 ALTER TABLE `grocery_item` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table grocery_to_do
@@ -50,6 +70,16 @@ CREATE TABLE `grocery_to_do` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `grocery_to_do` WRITE;
+/*!40000 ALTER TABLE `grocery_to_do` DISABLE KEYS */;
+
+INSERT INTO `grocery_to_do` (`id`, `item`, `category`, `price`, `from`)
+VALUES
+	(1,'sesame oil','PANTRY',785,'KOREAN MARKET'),
+	(2,'frozen seafood','FREEZER',1470,'FISH MARKET');
+
+/*!40000 ALTER TABLE `grocery_to_do` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
