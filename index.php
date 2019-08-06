@@ -14,10 +14,11 @@ $groceryItemsArray = processData($groceryItems);
 <html lang="eng">
 <html>
 <head>
-
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<p style="color: red"> lalalalal</p>
+<h1>Grocery Items</h1>
 
 
 <?php
