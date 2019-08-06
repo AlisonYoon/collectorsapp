@@ -4,8 +4,9 @@ require_once 'function.php';
 
 //function call
 $category = (isset($_GET['category'])) ? $_GET['category'] : 'all';
+$request = generateRequest($category);
 $db = connectDB();
-$groceryItems = getData($db, $category);
+$groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
 
 

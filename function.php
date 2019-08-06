@@ -6,23 +6,33 @@ require_once 'db.php';
  * @param $db
  * @return mixed
  */
-function getData(PDO $db, string $filter = 'all'):array {
-    $requestFilters = '';
-    if ($filter !== 'all') {
-        $requestFilters = ' WHERE `category` = "' . $filter . '";';
-    }
+function getData(PDO $db, string $request):array {
 
     $db->setAttribute(
         PDO::ATTR_DEFAULT_FETCH_MODE,
         PDO::FETCH_ASSOC);
 
-    $sql = $db->prepare('SELECT `item`, `category`, `price`, `remaining` FROM `grocery_item`'.$requestFilters);
+    $sql = $db->prepare($request);
     $sql->execute();
     $groceryItems = $sql->fetchAll();
 
     return $groceryItems;
 }
 
+/**
+ * generateRequest function was created for unit testing, it took some part from getData function
+ * @param string $filter
+ * @return string
+ */
+function generateRequest(string $filter = 'all'):string {
+    $requestFilters = '';
+    if ($filter !== 'all') {
+        $requestFilters = ' WHERE `category` = "' . $filter . '";';
+    }
+
+    $request = 'SELECT `item`, `category`, `price`, `remaining` FROM `grocery_item`'.$requestFilters;
+    return $request;
+}
 /**
  * processData function takes return value of getData function and returns all data from DB in HTML unit
  * @param $groceryItems
