@@ -7,6 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: collectorsapp
+# Generation Time: 2019-08-05 14:15:21 +0000
 # ************************************************************
 
 
@@ -49,29 +50,7 @@ VALUES
 	(9,'honey','PANTRY',450,40),
 	(10,'maple syrup','FRIDGE',760,45),
 	(11,'oat milk','FRIDGE',165,70),
-	(12,'frozen seafood','FREEZER',1470,0),
-	(13,'zucchini','PRODUCE',100,70),
-	(14,'onion','PRODUCE',280,40),
-	(15,'cabbage','PRODUCE',250,30),
-	(16,'tofu','FRIDGE',250,100),
-	(17,'mushroom','PRODUCE',100,80),
-	(18,'carrot','PRODUCE',65,50),
-	(19,'hummus','FRIDGE',300,95),
-	(20,'hemp milk','FRIDGE',180,100),
-	(21,'rice milk','FRIDGE',170,100),
-	(22,'pasta','OTHER',165,100),
-	(23,'cereal','OTHER',300,60),
-	(24,'ginger rhubarb jam','FRIDGE',450,60),
-	(25,'strawberry jam','FRIDGE',350,50),
-	(26,'spread butter','FRIDGE',300,80),
-	(27,'green onion','PRODUCE',130,80),
-	(28,'ice cream','FREEZER',500,45),
-	(29,'soy sauce','PANTRY',650,90),
-	(30,'gochujang','FRIDGE',550,70),
-	(33,'rice cake','FRIDGE',750,20),
-	(34,'cauliflower','PRODUCE',250,50),
-	(35,'apple vinegar','PANTRY',250,60),
-	(36,'rice','PANTRY',1630,95);
+	(12,'frozen seafood','FREEZER',1470,0);
 
 /*!40000 ALTER TABLE `grocery_item` ENABLE KEYS */;
 UNLOCK TABLES;
