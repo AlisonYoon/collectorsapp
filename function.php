@@ -6,7 +6,7 @@ require_once 'db.php';
  * @param $db
  * @return mixed
  */
-function getData($db, $filter = 'all') {
+function getData(PDO $db, string $filter = 'all'):array {
     $requestFilters = '';
     if ($filter !== 'all') {
         $requestFilters = ' WHERE `category` = "' . $filter . '";';
@@ -28,7 +28,7 @@ function getData($db, $filter = 'all') {
  * @param $groceryItems
  * @return string
  */
-function processData($groceryItems) {
+function processData(array $groceryItems):string {
     $itemRow= '';
     foreach($groceryItems as $item) {
         $itemRow .= '<div><ul><li>' . $item["item"] . '</li><li>' . $item['category'] . '</li><li>' . $item['price'] . '</li><li>' . $item['remaining'] . '</li></ul></div>';
