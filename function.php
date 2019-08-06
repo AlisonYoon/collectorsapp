@@ -46,6 +46,57 @@ function processData(array $groceryItems):string {
     return $itemRow;
 }
 
-
+function currentFilter($category) {
+    switch($category) {
+        case 'all':
+            return ("<li><a class=\"all current\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+        case 'pantry':
+            return ("<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry current\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+        case 'fridge':
+            return ("<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge current\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+        case 'freezer':
+            return ("<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer current\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+        case 'produce':
+            return ("<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce current\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+        case 'other':
+            return ("<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other current\" href=\"index.php?category=other\">Other</a></li>");
+        break;
+    }
+}
 
 ?>
