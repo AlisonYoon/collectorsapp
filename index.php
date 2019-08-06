@@ -2,6 +2,13 @@
 
 require_once 'function.php';
 
+//function call
+
+$db = connectDB();
+$groceryItems = getData($db);
+$groceryItemsArray = processData($groceryItems);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="eng">

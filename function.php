@@ -21,12 +21,4 @@ function processData($groceryItems) {
     return $itemRow;
 }
 
-
-//function call
-
-$db = connectDB();
-$groceryItems = getData($db);
-$groceryItemsArray = processData($groceryItems);
-
-
 ?>
