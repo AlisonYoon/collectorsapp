@@ -6,12 +6,17 @@ require_once 'db.php';
  * @param $db
  * @return mixed
  */
-function getData($db) {
+function getData($db, $filter = 'all') {
+    $requestFilters = '';
+    if ($filter !== 'all') {
+        $requestFilters = ' WHERE `category` = "' . $filter . '";';
+    }
+
     $db->setAttribute(
         PDO::ATTR_DEFAULT_FETCH_MODE,
         PDO::FETCH_ASSOC);
 
-    $sql = $db->prepare('SELECT `item`, `category`, `price`, `remaining` FROM `grocery_item`');
+    $sql = $db->prepare('SELECT `item`, `category`, `price`, `remaining` FROM `grocery_item`'.$requestFilters);
     $sql->execute();
     $groceryItems = $sql->fetchAll();
 
@@ -30,5 +35,7 @@ function processData($groceryItems) {
     }
     return $itemRow;
 }
+
+
 
 ?>

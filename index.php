@@ -3,9 +3,9 @@
 require_once 'function.php';
 
 //function call
-
+$category = (isset($_GET['category'])) ? $_GET['category'] : 'all';
 $db = connectDB();
-$groceryItems = getData($db);
+$groceryItems = getData($db, $category);
 $groceryItemsArray = processData($groceryItems);
 
 
@@ -20,12 +20,12 @@ $groceryItemsArray = processData($groceryItems);
 <body>
 <header>
     <ul>
-        <li><a href="">All</a></li>
-        <li><a href="">Pantry</a></li>
-        <li><a href="">Fridge</a></li>
-        <li><a href="">Freezer</a></li>
-        <li><a href="">Produce</a></li>
-        <li><a href="">Other</a></li>
+        <li><a href="index.php?category=all">All</a></li>
+        <li><a href="index.php?category=pantry">Pantry</a></li>
+        <li><a href="index.php?category=fridge">Fridge</a></li>
+        <li><a href="index.php?category=freezer">Freezer</a></li>
+        <li><a href="index.php?category=produce">Produce</a></li>
+        <li><a href="index.php?category=other">Other</a></li>
     </ul>
 </header>
 <section>
