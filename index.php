@@ -45,18 +45,17 @@ $groceryItemsArray = processData($groceryItems);
         <input type="submit">
     </form>
 </section>
+<div class="table">
+    <div class="table-heading">
+        <ul>
+            <li>Item</li>
+            <li>Category</li>
+            <li>Price(pence)</li>
+            <li>Remaining(%)</li>
+        </ul>
+    </div>
 
-<div class="table-heading">
-    <ul>
-        <li>Item</li>
-        <li>Category</li>
-        <li>Price(pence)</li>
-        <li>Remaining(%)</li>
-    </ul>
+        <?php echo $groceryItemsArray; ?>
 </div>
-
-<?php
- echo $groceryItemsArray;
-?>
 </body>
 </html>

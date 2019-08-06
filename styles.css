@@ -8,22 +8,24 @@
 a {
     text-decoration: none;
 }
+ul {
+    margin: 0;
+}
 body {
     font-family: 'Noto Sans', sans-serif;
+    background: rgb(249, 250, 255);
 }
 header {
-    height: 60px;
+    height: 54px;
     overflow: hidden;
+    background: #1A294E;
 }
 header ul li a {
     display: inline-block;
     width: 100px;
     text-align: center;
-    padding: 0.5rem;
-    border: 3px solid #2f8393;
-}
-div {
-    border-bottom: 1px solid #2f8393;
+    padding: 1rem 0.5rem;
+    color: #e0e0e0;
 }
 div ul, header ul {
     display: flex;
@@ -33,9 +35,25 @@ div ul, header ul {
 div ul li {
     width: 200px;
 }
-.table-heading {
-    font-weight: 700;
+.table {
+    width: 96vw;
+    margin: 0 auto;
+}
+.table-heading, .item-row {
+    color: rgb(168, 164, 165);
+    background: #fff;
+    height: 40px;
+    margin: 0.3rem 0;
+    padding: 0.6rem 0;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+.item-row {
+    color: #333;
 }
 .current {
-    background: #ffef72;
+    background: rgba(243,167,116, 0.2);
+    color: #F3A774;
+    border-bottom: 4px solid #F3A774;
 }
