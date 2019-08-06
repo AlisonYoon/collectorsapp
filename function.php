@@ -1,6 +1,11 @@
 <?php
 require_once 'db.php';
 
+/**
+ * getData function gets data from the DB
+ * @param $db
+ * @return mixed
+ */
 function getData($db) {
     $db->setAttribute(
         PDO::ATTR_DEFAULT_FETCH_MODE,
@@ -13,6 +18,11 @@ function getData($db) {
     return $groceryItems;
 }
 
+/**
+ * processData function takes return value of getData function and returns all data from DB in HTML unit
+ * @param $groceryItems
+ * @return string
+ */
 function processData($groceryItems) {
     $itemRow= '';
     foreach($groceryItems as $item) {
