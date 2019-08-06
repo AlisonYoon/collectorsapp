@@ -77,32 +77,6 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table grocery_to_do
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `grocery_to_do`;
-
-CREATE TABLE `grocery_to_do` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `item` varchar(255) NOT NULL DEFAULT '',
-  `category` enum('PANTRY','FRIDGE','FREEZER','PRODUCE','OTHER') NOT NULL,
-  `price` int(11) unsigned DEFAULT NULL,
-  `from` enum('CO-OP','FRUIT STAND','SCOOPAWAY','KOREAN MARKET','FISH MARKET','AMAZON') DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `grocery_to_do` WRITE;
-/*!40000 ALTER TABLE `grocery_to_do` DISABLE KEYS */;
-
-INSERT INTO `grocery_to_do` (`id`, `item`, `category`, `price`, `from`)
-VALUES
-	(1,'sesame oil','PANTRY',785,'KOREAN MARKET'),
-	(2,'frozen seafood','FREEZER',1470,'FISH MARKET');
-
-/*!40000 ALTER TABLE `grocery_to_do` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
