@@ -39,7 +39,7 @@ $groceryItemsArray = processData($groceryItems);
         </select>
         <input type="text" name="price" placeholder="price (pence)" required>
         <input type="text" name="remaining" placeholder="remaining (%)" required>
-        <input type="submit">
+        <input type="submit" value="Submit">
     </form>
 </section>
 <div class="table">
