@@ -1,17 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     list-style: none;
 }
-
-div {
-    border-bottom: 1px solid #2f8393;
+a {
+    text-decoration: none;
 }
-div ul {
+ul {
+    margin: 0;
+}
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: rgb(249, 250, 255);
+}
+header {
+    height: 54px;
+    overflow: hidden;
+    background: #1A294E;
+}
+header ul li a {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    color: #e0e0e0;
+}
+div ul, header ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 div ul li {
     width: 200px;
+}
+.table {
+    width: 96vw;
+    margin: 0 auto;
+}
+.table-heading, .item-row {
+    color: rgb(168, 164, 165);
+    background: #fff;
+    height: 40px;
+    margin: 0.3rem 0;
+    padding: 0.6rem 0;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+.item-row {
+    color: #333;
+}
+.current {
+    background: rgba(243,167,116, 0.2);
+    color: #F3A774;
+    border-bottom: 4px solid #F3A774;
+}
+form {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.PANTRY-row, .FRIDGE-row, .FREEZER-row, .PRODUCE-row, .OTHER-row {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+}
+.PANTRY-row {
+    color: rgb(88, 188, 208);
+}
+.FRIDGE-row {
+    color: rgb(168, 150, 234);
+}
+.FREEZER-row {
+    color: rgb(114, 203,246);
+}
+.PRODUCE-row {
+    color: rgb(238, 128, 153);
+}
+.OTHER-row {
+    color: rgb(94,227,163);
 }
