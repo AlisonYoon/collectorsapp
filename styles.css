@@ -28,12 +28,23 @@ header ul li a {
     color: #e0e0e0;
 }
 div ul, header ul {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
     justify-content: space-evenly;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;    /* iOS*/
 }
 div ul li {
     width: 200px;
+}
+div ul li span {
+    display: none;
 }
 .table {
     width: 96vw;
@@ -57,30 +68,101 @@ div ul li {
     color: #F3A774;
     border-bottom: 4px solid #F3A774;
 }
-form {
+.tabs {
+    display: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#tab {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.tab {
+    width: 100%;
+    overflow: hidden;
+}
+.tab-label {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;     /*iOS*/
+    -ms-flex-pack: justify;
+    padding: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tab-label:hover {
+    cursor: pointer;
+}
+.tab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all .35s;
+}
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #2c3e50;
+    background: white;
+    transition: all .35s;
+}
+/*.tabs input:checked + .tab-label {*/
+/*    background: #1a252f;*/
+/*}*/
+.tabs input:checked + .tab-label::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.tabs input:checked ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+}
+form.big-form, .tabs form {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
     display: flex;
     height: 100px;
     align-items: center;
+    -ms-flex-align: center;
     justify-content: space-evenly;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;    /* iOS*/
+    padding: 0 1rem;
 }
-form p, form input, form select, form input[type=submit] {
+form.big-form p, form.big-form input, form.big-form select, form.big-form input[type=submit],
+.tabs form p, .tabs form input, .tabs form select, .tabs form input[type=submit] {
     color: #1A294E;
 }
-form input, form select {
+form.big-form input, form.big-form select,
+.tabs form input, .tabs form select {
     border: 1px solid #ededed;
 }
-form p {
+form.big-form p,
+.tabs form p {
     font-weight: 700;
 }
-form input {
+form.big-form input,
+.tabs form input {
     padding: 0.5rem;
 }
-form select {
+form.big-form select,
+.tabs form select,
+form.big-form input,
+.tabs form input {
     width: 189px;
     height: 38px;
     background: #fff;
 }
-form input[type=submit] {
+form.big-form input[type=submit],
+.tabs form input[type=submit] {
     background: #F3A774;
     width: 100px;
     border: none;
@@ -88,7 +170,8 @@ form input[type=submit] {
     -moz-border-radius: 0.3rem;
     border-radius: 0.3rem;
 }
-form input[type=submit]:hover{
+form.big-form input[type=submit]:hover,
+.tabs form input[type=submit]:hover {
     cursor: pointer;
 }
 .PANTRY-row, .FRIDGE-row, .FREEZER-row, .PRODUCE-row, .OTHER-row {
@@ -109,4 +192,74 @@ form input[type=submit]:hover{
 }
 .OTHER-row {
     color: rgb(94,227,163);
+}
+/* Media Query */
+@media only screen and (max-width: 1024px) {
+    form.big-form {
+        display: none;
+    }
+    .tabs {
+        display: block;
+    }
+    .tabs form {
+        height: 300px;
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    .tabs form input {
+        margin: 0.3rem 0;
+    }
+}
+@media only screen and (max-width: 736px) {
+    header {
+        height: 108px;
+    }
+    header ul {
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+    }
+    header ul li {
+        display: inline-block;
+        width: 33.3%;
+        text-align: center;
+    }
+    header ul li a {
+        height: 54px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 568px) {
+    .table-heading {
+        display: none;
+    }
+    div ul {
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+    }
+    div ul li {
+        margin: 0.2rem 0 0 1rem;
+    }
+    div ul li span {
+        display: block;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: #1A294E;
+    }
+    .PANTRY-row, .FREEZER-row, .FRIDGE-row, .OTHER-row, .PRODUCE-row {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+    }
+    .item-row {
+        height: 140px;
+    }
 }
