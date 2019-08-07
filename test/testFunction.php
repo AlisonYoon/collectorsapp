@@ -25,4 +25,14 @@ class FunctionTest extends TestCase
         //assertion
         $this->assertEquals($result, $expectedResult);
     }
+
+    public function testGenerateRequestShouldReturnTypeError()
+    {
+        //setup
+        $arrayParam = [1,2];
+
+        //assertion
+        $this->expectException(TypeError::class);
+        generateRequest($arrayParam);
+    }
 }
