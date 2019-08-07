@@ -46,6 +46,11 @@ function processData(array $groceryItems):string {
     return $itemRow;
 }
 
+/**
+ * currentFilter takes $category($category = (isset($_GET['category'])) ? $_GET['category'] : 'all';) as parameter and returns HTML tag to display currently-applied filter on the page
+ * @param $category
+ * @return string
+ */
 function currentFilter($category) {
     switch($category) {
         case 'all':

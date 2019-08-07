@@ -21,12 +21,6 @@ $groceryItemsArray = processData($groceryItems);
 <body>
 <header>
     <ul>
-<!--        <li><a class="all" href="index.php?category=all">All</a></li>-->
-<!--        <li><a class="pantry" href="index.php?category=pantry">Pantry</a></li>-->
-<!--        <li><a class="fridge" href="index.php?category=fridge">Fridge</a></li>-->
-<!--        <li><a class="freezer" href="index.php?category=freezer">Freezer</a></li>-->
-<!--        <li><a class="produce" href="index.php?category=produce">Produce</a></li>-->
-<!--        <li><a class="other" href="index.php?category=other">Other</a></li>-->
         <?php echo currentFilter($category) ?>
     </ul>
 </header>
