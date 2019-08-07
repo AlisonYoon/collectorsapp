@@ -225,7 +225,7 @@ form.big-form input[type=submit]:hover,
         width: 100%;
     }
 }
-@media only screen and (max-device-width: 568px) {
+@media only screen and (max-width: 568px) {
     .table-heading {
         display: none;
     }
