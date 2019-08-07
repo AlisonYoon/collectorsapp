@@ -25,18 +25,21 @@ $groceryItemsArray = processData($groceryItems);
     </ul>
 </header>
 <section>
+
     <form action="index.php" method="get">
-        <input type="text" name="item" placeholder="item">
-        <select name="category">
+        <p>Add a New Item</p>
+        <input type="text" name="item" placeholder="item" required>
+        <select name="category" required>
+            <option value="" disabled selected hidden>Category</option>
             <option value="pantry">Pantry</option>
             <option value="fridge">Fridge</option>
             <option value="freezer">Freezer</option>
             <option value="produce">Produce</option>
             <option value="other">Other</option>
         </select>
-        <input type="text" name="price" placeholder="price">
-        <input type="text" name="remaining" placeholder="remaining">
-        <input type="submit">
+        <input type="text" name="price" placeholder="price (pence)" required>
+        <input type="text" name="remaining" placeholder="remaining (%)" required>
+        <input type="submit" value="Submit">
     </form>
 </section>
 <div class="table">
