@@ -35,8 +35,10 @@ div ul, header ul {
     display: flex;
     flex-direction: row;
     -ms-flex-direction: row;
+    -webkit-flex-direction: row;
     justify-content: space-evenly;
     -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;    /* iOS*/
 }
 div ul li {
     width: 200px;
@@ -87,6 +89,7 @@ div ul li span {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
+    -webkit-justify-content: space-between;     /*iOS*/
     -ms-flex-pack: justify;
     padding: 1em;
     font-weight: bold;
@@ -131,6 +134,7 @@ form.big-form, .tabs form {
     -ms-flex-align: center;
     justify-content: space-evenly;
     -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;    /* iOS*/
 }
 form.big-form p, form.big-form input, form.big-form select, form.big-form input[type=submit],
 .tabs form p, .tabs form input, .tabs form select, .tabs form input[type=submit] {
@@ -200,8 +204,10 @@ form.big-form input[type=submit]:hover,
         height: 300px;
         flex-wrap: wrap;
         -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
         flex-direction: column;
         -ms-flex-direction: column;
+        -webkit-flex-direction: column;
     }
     .tabs form input {
         margin: 0.3rem 0;
@@ -214,6 +220,7 @@ form.big-form input[type=submit]:hover,
     header ul {
         flex-wrap: wrap;
         -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
     }
     header ul li {
         display: inline-block;
@@ -232,6 +239,7 @@ form.big-form input[type=submit]:hover,
     div ul {
         -moz-flex-direction: column;
         -ms-flex-direction: column;
+        -webkit-flex-direction: column;
         flex-direction: column;
         position: relative;
     }
