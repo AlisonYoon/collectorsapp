@@ -28,9 +28,15 @@ header ul li a {
     color: #e0e0e0;
 }
 div ul, header ul {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
+    -ms-flex-direction: row;
     justify-content: space-evenly;
+    -ms-flex-pack: justify;
 }
 div ul li {
     width: 200px;
@@ -72,8 +78,13 @@ div ul li {
     overflow: hidden;
 }
 .tab-label {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
     display: flex;
     justify-content: space-between;
+    -ms-flex-pack: justify;
     padding: 1em;
     font-weight: bold;
     cursor: pointer;
@@ -107,10 +118,16 @@ div ul li {
     padding: 1em;
 }
 form.big-form, .tabs form {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
     display: flex;
     height: 100px;
     align-items: center;
+    -ms-flex-align: center;
     justify-content: space-evenly;
+    -ms-flex-pack: justify;
 }
 form.big-form p, form.big-form input, form.big-form select, form.big-form input[type=submit],
 .tabs form p, .tabs form input, .tabs form select, .tabs form input[type=submit] {
@@ -129,7 +146,9 @@ form.big-form input,
     padding: 0.5rem;
 }
 form.big-form select,
-.tabs form select {
+.tabs form select,
+form.big-form input,
+.tabs form input {
     width: 189px;
     height: 38px;
     background: #fff;
@@ -177,7 +196,9 @@ form.big-form input[type=submit]:hover,
     .tabs form {
         height: 300px;
         flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
         flex-direction: column;
+        -ms-flex-direction: column;
     }
     .tabs form input {
         margin: 0.3rem 0;
@@ -189,6 +210,7 @@ form.big-form input[type=submit]:hover,
     }
     header ul {
         flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
     }
     header ul li {
         display: inline-block;
