@@ -13,7 +13,7 @@ ul {
 }
 body {
     font-family: 'Noto Sans', sans-serif;
-    background: rgb(249, 250, 255);
+    background: #f5f7fb;
 }
 header {
     height: 54px;
@@ -59,9 +59,37 @@ div ul li {
 }
 form {
     display: flex;
-    height: 60px;
+    height: 100px;
     align-items: center;
     justify-content: space-evenly;
+}
+form p, form input, form select, form input[type=submit] {
+    color: #1A294E;
+}
+form input, form select {
+    border: 1px solid #ededed;
+}
+form p {
+    font-weight: 700;
+}
+form input {
+    padding: 0.5rem;
+}
+form select {
+    width: 189px;
+    height: 38px;
+    background: #fff;
+}
+form input[type=submit] {
+    background: #F3A774;
+    width: 100px;
+    border: none;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+form input[type=submit]:hover{
+    cursor: pointer;
 }
 .PANTRY-row, .FRIDGE-row, .FREEZER-row, .PRODUCE-row, .OTHER-row {
     font-size: 0.8rem;
