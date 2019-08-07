@@ -41,6 +41,9 @@ div ul, header ul {
 div ul li {
     width: 200px;
 }
+div ul li span {
+    display: none;
+}
 .table {
     width: 96vw;
     margin: 0 auto;
@@ -220,5 +223,34 @@ form.big-form input[type=submit]:hover,
     header ul li a {
         height: 54px;
         width: 100%;
+    }
+}
+@media only screen and (max-device-width: 568px) {
+    .table-heading {
+        display: none;
+    }
+    div ul {
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+    }
+    div ul li {
+        margin: 0.2rem 0 0 1rem;
+    }
+    div ul li span {
+        display: block;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: #1A294E;
+    }
+    .PANTRY-row, .FREEZER-row, .FRIDGE-row, .OTHER-row, .PRODUCE-row {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+    }
+    .item-row {
+        height: 140px;
     }
 }
