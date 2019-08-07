@@ -135,6 +135,7 @@ form.big-form, .tabs form {
     justify-content: space-evenly;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;    /* iOS*/
+    padding: 0 1rem;
 }
 form.big-form p, form.big-form input, form.big-form select, form.big-form input[type=submit],
 .tabs form p, .tabs form input, .tabs form select, .tabs form input[type=submit] {
