@@ -4,7 +4,7 @@ require_once 'db.php';
 /**
  * getData function gets data from the DB
  * @param $db
- * @return mixed
+ * @return array
  */
 function getData(PDO $db, string $request):array {
 
@@ -20,7 +20,7 @@ function getData(PDO $db, string $request):array {
 }
 
 /**
- * generateRequest function was created for unit testing, it took some part from getData function
+ * generateRequest function takes $filter as param and returns a query to retrieve data from DB. It was created for unit testing, it took some part from getData function
  * @param string $filter
  * @return string
  */
@@ -51,7 +51,7 @@ function processData(array $groceryItems):string {
  * @param $category
  * @return string
  */
-function currentFilter($category) {
+function currentFilter(string $category):string {
     switch($category) {
         case 'all':
             return ("<li><a class=\"all current\" href=\"index.php?category=all\">All</a></li>
