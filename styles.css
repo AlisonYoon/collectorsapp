@@ -57,3 +57,28 @@ div ul li {
     color: #F3A774;
     border-bottom: 4px solid #F3A774;
 }
+form {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.PANTRY-row, .FRIDGE-row, .FREEZER-row, .PRODUCE-row, .OTHER-row {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+}
+.PANTRY-row {
+    color: rgb(88, 188, 208);
+}
+.FRIDGE-row {
+    color: rgb(168, 150, 234);
+}
+.FREEZER-row {
+    color: rgb(114, 203,246);
+}
+.PRODUCE-row {
+    color: rgb(238, 128, 153);
+}
+.OTHER-row {
+    color: rgb(94,227,163);
+}

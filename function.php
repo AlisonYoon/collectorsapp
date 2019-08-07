@@ -41,7 +41,7 @@ function generateRequest(string $filter = 'all'):string {
 function processData(array $groceryItems):string {
     $itemRow= '';
     foreach($groceryItems as $item) {
-        $itemRow .= '<div class="item-row"><ul><li>' . $item["item"] . '</li><li>' . $item['category'] . '</li><li>' . $item['price'] . '</li><li>' . $item['remaining'] . '</li></ul></div>';
+        $itemRow .= '<div class="item-row"><ul><li>' . $item["item"] . '</li><li class="' .$item["category"] . '-row">' . $item['category'] . '</li><li>' . $item['price'] . '</li><li>' . $item['remaining'] . '</li></ul></div>';
     }
     return $itemRow;
 }
