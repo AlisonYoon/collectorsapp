@@ -183,3 +183,20 @@ form.big-form input[type=submit]:hover,
         margin: 0.3rem 0;
     }
 }
+@media only screen and (max-width: 736px) {
+    header {
+        height: 108px;
+    }
+    header ul {
+        flex-wrap: wrap;
+    }
+    header ul li {
+        display: inline-block;
+        width: 33.3%;
+        text-align: center;
+    }
+    header ul li a {
+        height: 54px;
+        width: 100%;
+    }
+}
