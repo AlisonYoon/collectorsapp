@@ -2,12 +2,14 @@
 
 require_once 'functions.php';
 
+$item = (isset($_GET['item'])) ? $_GET['item'] : NULL;
 $category = (isset($_GET['category'])) ? $_GET['category'] : 'all';
+$price = (isset($_GET['price'])) ? $_GET['price'] : NULL;
+$remaining = (isset($_GET['remaining'])) ? $_GET['remaining'] : NULL;
 $request = generateRequest($category);
 $db = connectDB();
 $groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
-
 
 ?>
 <!DOCTYPE html>
@@ -46,6 +48,19 @@ $groceryItemsArray = processData($groceryItems);
                         <input type="text" name="price" placeholder="price (pence)" required>
                         <input type="text" name="remaining" placeholder="remaining (%)" required>
                         <input type="submit" value="Submit">
+                        <p>
+                            <?php
+                            if(!is_null($item) && $category && !is_null($price)  && !is_null($remaining)) {
+                                if((int)$price > 0  && (int)$remaining > 0) {
+                                    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+                                    $message = $item . ' added to database';
+                                } else {
+                                    $message = 'Please check : number only for price or remaining input, text only for item input.';
+                                }
+                                echo $message;
+                            }
+                            ?>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -66,6 +81,20 @@ $groceryItemsArray = processData($groceryItems);
             <input type="text" name="price" placeholder="price (pence)" required>
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
+            <p>
+                <?php
+                    if(!is_null($item) && $category && !is_null($price) && !is_null($remaining)) {
+//                        var_dump($remaining);
+                        if((int)$price > 0 && (int)$remaining > 0) {
+                            $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+                            $message = $item . ' added to database';
+                        } else {
+                            $message = 'Please check : number only for price or remaining input, text only for item input.';
+                        }
+                        echo $message;
+                    }
+                ?>
+            </p>
         </form>
     </section>
     <div class="data-table">
@@ -73,7 +102,7 @@ $groceryItemsArray = processData($groceryItems);
             <ul>
                 <li>Item</li>
                 <li>Category</li>
-                <li>Price(pence)</li>
+                <li>Price(£)</li>
                 <li>Remaining(%)</li>
             </ul>
         </div>

@@ -111,3 +111,22 @@ function currentFilter(string $category):string {
         <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
     }
 }
+
+/**
+ * inputValidation function takes string$item, string$category, int$price, int$remaining (all should come from $_GET) and return either a INSERT query or error message.
+ * @param string $item
+ * @param string $category
+ * @param int $price
+ * @param int $remaining
+ * @return string
+ */
+function inputValidation(PDO $db, string $item, string $category, int $price, int $remaining)
+{
+    $insertToDB  = $db->prepare('INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (:item, :category, :price, :remaining);');
+    $insertToDB->bindParam(':item', $item, PDO::PARAM_STR );
+    $insertToDB->bindParam(':category', $category, PDO::PARAM_STR );
+    $insertToDB->bindParam(':price', $price, PDO::PARAM_INT );
+    $insertToDB->bindParam(':remaining', $remaining, PDO::PARAM_INT );
+    $insertToDB->execute();
+}
+
