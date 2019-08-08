@@ -43,7 +43,7 @@ $groceryItemsArray = processData($groceryItems);
                             <option value="produce">Produce</option>
                             <option value="other">Other</option>
                         </select>
-                        <input type="text" name="price" placeholder="price (pence)" required>
+                        <input type="text" name="price" placeholder="price (£)" required>
                         <input type="text" name="remaining" placeholder="remaining (%)" required>
                         <input type="submit" value="Submit">
                     </form>
@@ -63,7 +63,7 @@ $groceryItemsArray = processData($groceryItems);
                 <option value="produce">Produce</option>
                 <option value="other">Other</option>
             </select>
-            <input type="text" name="price" placeholder="price (pence)" required>
+            <input type="text" name="price" placeholder="price (£)" required>
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
         </form>
@@ -73,7 +73,7 @@ $groceryItemsArray = processData($groceryItems);
             <ul>
                 <li>Item</li>
                 <li>Category</li>
-                <li>Price(pence)</li>
+                <li>Price(£)</li>
                 <li>Remaining(%)</li>
             </ul>
         </div>
