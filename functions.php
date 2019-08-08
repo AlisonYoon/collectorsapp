@@ -42,7 +42,7 @@ function generateRequest(string $filter = 'all'):string {
 function processData(array $groceryItems):string {
     $itemRow= '';
     foreach($groceryItems as $item) {
-        $itemRow .= '<div class="item-row"><ul><li><span>Item</span>' . $item['item'] . '</li><li class="' .$item["category"] . '-row">' . $item['category'] . '</li><li><span>Price(pense)</span>' . $item['price'] . '</li><li><span>Remaining(%)</span>' . $item['remaining'] . '</li></ul></div>';
+        $itemRow .= '<div class="item-row"><ul><li><span>Item</span>' . $item['item'] . '</li><li class="' .$item["category"] . '-row">' . $item['category'] . '</li><li><span>Price(£)</span>£' . $item['price']/100 . '</li><li><span>Remaining(%)</span>' . $item['remaining'] . '%</li></ul></div>';
     }
     return $itemRow;
 }

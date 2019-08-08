@@ -1,6 +1,6 @@
 <?php
 
-require_once 'function.php';
+require_once 'functions.php';
 
 $category = (isset($_GET['category'])) ? $_GET['category'] : 'all';
 $request = generateRequest($category);
@@ -16,8 +16,8 @@ $groceryItemsArray = processData($groceryItems);
     <meta charset="UTF-8">
     <title>Grocery Items App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
