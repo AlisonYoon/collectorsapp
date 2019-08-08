@@ -17,8 +17,8 @@ class FunctionTest extends TestCase
     public function testGenerateRequest_ShouldReturnWhereCategoryWithParam()
     {
         $filter = 'pantry';
-        $result = generateRequest($filter);
         $expectedResult = 'SELECT `item`, `category`, `price`, `remaining` FROM `grocery_item` WHERE `category` = "' . $filter.  '";';
+        $result = generateRequest($filter);
 
         $this->assertEquals($result, $expectedResult);
     }
