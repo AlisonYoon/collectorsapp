@@ -2,12 +2,16 @@
 
 require_once 'functions.php';
 
+$item = (isset($_GET['item'])) ? $_GET['item'] : NULL;
 $category = (isset($_GET['category'])) ? $_GET['category'] : 'all';
+$price = (isset($_GET['price'])) ? $_GET['price'] : NULL;
+$remaining = (isset($_GET['remaining'])) ? $_GET['remaining'] : NULL;
 $request = generateRequest($category);
 $db = connectDB();
 $groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
-
+$inputValidation = inputValidation($item, $category, $price, $remaining);
+$insertToDb = insertDataIntoDb($db, $inputValidation);
 
 ?>
 <!DOCTYPE html>
