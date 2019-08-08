@@ -11,8 +11,6 @@ $db = connectDB();
 $groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +68,9 @@ $groceryItemsArray = processData($groceryItems);
             <input type="text" name="price" placeholder="price (pence)" required>
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
-            <p><?php
-                if($item && $category && $price && $remaining) {
+            <p>
+                <?php
+                if(!is_null($item) && $category && !is_null($price) && !is_null($remaining)) {
                     $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
                     $message = $item . ' added to database';
                     echo $message;
