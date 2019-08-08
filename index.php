@@ -70,11 +70,22 @@ $groceryItemsArray = processData($groceryItems);
             <input type="submit" value="Submit">
             <p>
                 <?php
-                if(!is_null($item) && $category && !is_null($price) && !is_null($remaining)) {
-                    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
-                    $message = $item . ' added to database';
-                    echo $message;
-                }
+//                if(!is_null($item) && $category && !is_null($price) && !is_null($remaining)) {
+//                    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+//                    $message = $item . ' added to database';
+//                    echo $message;
+
+
+                    if(!is_null($item) && $category && !is_null($price)  && !is_null($remaining)) {
+                        if((int)$price > 0) {
+                            $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+                            $message = $item . ' added to database';
+                        } else {
+                            $message = 'Please check : number only for price or remaining input, text only for item input.';
+                        }
+                        echo $message;
+                    }
+
                 ?>
             </p>
         </form>
