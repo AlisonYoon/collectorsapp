@@ -11,12 +11,6 @@ $db = connectDB();
 $groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
 
-// fine
-
-if($item && $category && $price && $remaining) {
-    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
-    $message = $item . ' added to database';
-}
 
 
 ?>
@@ -77,7 +71,11 @@ if($item && $category && $price && $remaining) {
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
             <p><?php
-                echo $message;
+                if($item && $category && $price && $remaining) {
+                    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+                    $message = $item . ' added to database';
+                    echo $message;
+                }
                 ?>
             </p>
         </form>
