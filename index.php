@@ -16,8 +16,6 @@ $groceryItemsArray = processData($groceryItems);
 if($item && $category && $price && $remaining) {
     $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
     $message = $item . ' added to database';
-} else {
-    $errorMsg = 'Please type in text values in \'item\' and select one from \'category\' fields, number value in \'price\' and \'remaining\' fields.';
 }
 
 
@@ -79,7 +77,7 @@ if($item && $category && $price && $remaining) {
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
             <p><?php
-//                ((isset($_GET['item']) && (isset($_GET['category']) && (isset($_GET['price']) && (isset($_GET['remaining']))? echo $message; : echo $errorMsg;
+                echo $message;
                 ?>
             </p>
         </form>

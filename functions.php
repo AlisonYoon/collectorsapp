@@ -122,29 +122,11 @@ function currentFilter(string $category):string {
  */
 function inputValidation(PDO $db, string $item, string $category, int $price, int $remaining)
 {
-//    var_dump($item);
-    $category ='PRODUCE';
-//    var_dump($price);
-//    var_dump($remaining);
-        $insertToDB  = $db->prepare('INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (:item, :category, :price, :remaining);');
-        $insertToDB->bindParam(':item', $item, PDO::PARAM_STR );
-        $insertToDB->bindParam(':category', $category, PDO::PARAM_STR );
-        $insertToDB->bindParam(':price', $price, PDO::PARAM_INT );
-        $insertToDB->bindParam(':remaining', $remaining, PDO::PARAM_INT );
-        $insertToDB->execute();
-
+    $insertToDB  = $db->prepare('INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (:item, :category, :price, :remaining);');
+    $insertToDB->bindParam(':item', $item, PDO::PARAM_STR );
+    $insertToDB->bindParam(':category', $category, PDO::PARAM_STR );
+    $insertToDB->bindParam(':price', $price, PDO::PARAM_INT );
+    $insertToDB->bindParam(':remaining', $remaining, PDO::PARAM_INT );
+    $insertToDB->execute();
 }
 
-//function insertDataIntoDb(PDO $db, string $insertToDB)
-//{
-//    if($_GET['item'] && $_GET['category'] && $_GET['price'] && $_GET['remaining']) {
-//        $db->setAttribute(
-//            PDO::ATTR_DEFAULT_FETCH_MODE,
-//            PDO::FETCH_ASSOC
-//        );
-//
-//        $sql = $db->prepare($insertToDB);
-//        $insert = $sql->execute();
-//        return $insert;
-//    }
-//}
