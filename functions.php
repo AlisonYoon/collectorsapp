@@ -110,4 +110,17 @@ function currentFilter(string $category):string {
         <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
         <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
     }
+
+    function inputValidation(string $item, string $category, int $price, int $remaining)
+    {
+        if($_GET['item']) {
+            if(is_string($item) && is_string($category) && is_numeric($price) && is_numeric($price) ) {
+                $insertToDB = 'INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (`item`, `category`, `price`, `remaining`)';
+                return $insertToDB;
+            } else {
+                $errorMsg = '<p>Please type in string values in \'item\' and \'category\' fields, number value in \'price\' and \'remaining\' fields.</p>';
+                return $errorMsg;
+            }
+        }
+    }
 }
