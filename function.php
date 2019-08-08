@@ -10,7 +10,8 @@ function getData(PDO $db, string $request):array {
 
     $db->setAttribute(
         PDO::ATTR_DEFAULT_FETCH_MODE,
-        PDO::FETCH_ASSOC);
+        PDO::FETCH_ASSOC
+    );
 
     $sql = $db->prepare($request);
     $sql->execute();
@@ -41,7 +42,7 @@ function generateRequest(string $filter = 'all'):string {
 function processData(array $groceryItems):string {
     $itemRow= '';
     foreach($groceryItems as $item) {
-        $itemRow .= '<div class="item-row"><ul><li><span>Item</span>' . $item["item"] . '</li><li class="' .$item["category"] . '-row">' . $item['category'] . '</li><li><span>Price(pense)</span>' . $item['price'] . '</li><li><span>Remaining(%)</span>' . $item['remaining'] . '</li></ul></div>';
+        $itemRow .= '<div class="item-row"><ul><li><span>Item</span>' . $item['item'] . '</li><li class="' .$item["category"] . '-row">' . $item['category'] . '</li><li><span>Price(pense)</span>' . $item['price'] . '</li><li><span>Remaining(%)</span>' . $item['remaining'] . '</li></ul></div>';
     }
     return $itemRow;
 }
@@ -103,5 +104,3 @@ function currentFilter(string $category):string {
         break;
     }
 }
-
-?>

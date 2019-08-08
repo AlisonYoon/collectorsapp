@@ -5,21 +5,26 @@
     padding: 0;
     list-style: none;
 }
-a {
-    text-decoration: none;
-}
-ul {
-    margin: 0;
-}
+
 body {
     font-family: 'Noto Sans', sans-serif;
     background: #f5f7fb;
 }
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+}
+
 header {
     height: 54px;
     overflow: hidden;
     background: #1A294E;
 }
+
 header ul li a {
     display: inline-block;
     width: 100px;
@@ -27,30 +32,35 @@ header ul li a {
     padding: 1rem 0.5rem;
     color: #e0e0e0;
 }
+
 div ul, header ul {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;
     display: flex;
-    flex-direction: row;
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: row;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;    /* iOS*/
+    justify-content: space-evenly;
 }
+
 div ul li {
     width: 200px;
 }
+
 div ul li span {
     display: none;
 }
-.table {
+
+.data-table {
     width: 96vw;
     margin: 0 auto;
 }
-.table-heading, .item-row {
+
+.data-table-heading, .item-row {
     color: rgb(168, 164, 165);
     background: #fff;
     height: 40px;
@@ -60,44 +70,52 @@ div ul li span {
     -moz-border-radius: 0.3rem;
     border-radius: 0.3rem;
 }
+
 .item-row {
     color: #333;
 }
+
 .current {
     background: rgba(243,167,116, 0.2);
     color: #F3A774;
     border-bottom: 4px solid #F3A774;
 }
+
 .tabs {
     display: none;
     border-radius: 8px;
     overflow: hidden;
 }
+
 #tab {
     position: absolute;
     opacity: 0;
     z-index: -1;
 }
+
 .tab {
     width: 100%;
     overflow: hidden;
 }
+
 .tab-label {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
     -webkit-justify-content: space-between;     /*iOS*/
     -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 1em;
     font-weight: bold;
     cursor: pointer;
 }
+
 .tab-label:hover {
     cursor: pointer;
 }
+
 .tab-label::after {
     content: "\276F";
     width: 1em;
@@ -105,6 +123,7 @@ div ul li span {
     text-align: center;
     transition: all .35s;
 }
+
 .tab-content {
     max-height: 0;
     padding: 0 1em;
@@ -112,17 +131,17 @@ div ul li span {
     background: white;
     transition: all .35s;
 }
-/*.tabs input:checked + .tab-label {*/
-/*    background: #1a252f;*/
-/*}*/
+
 .tabs input:checked + .tab-label::after {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
 .tabs input:checked ~ .tab-content {
     max-height: 100vh;
     padding: 1em;
 }
+
 form.big-form, .tabs form {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -130,21 +149,24 @@ form.big-form, .tabs form {
     display: -webkit-flex;
     display: flex;
     height: 100px;
-    align-items: center;
     -ms-flex-align: center;
     justify-content: space-evenly;
     -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;    /* iOS*/
+    -webkit-justify-content: space-between;    /* iOS */
+    align-items: center;
     padding: 0 1rem;
 }
+
 form.big-form p, form.big-form input, form.big-form select, form.big-form input[type=submit],
 .tabs form p, .tabs form input, .tabs form select, .tabs form input[type=submit] {
     color: #1A294E;
 }
+
 form.big-form input, form.big-form select,
 .tabs form input, .tabs form select {
     border: 1px solid #ededed;
 }
+
 form.big-form p,
 .tabs form p {
     font-weight: 700;
@@ -153,6 +175,7 @@ form.big-form input,
 .tabs form input {
     padding: 0.5rem;
 }
+
 form.big-form select,
 .tabs form select,
 form.big-form input,
@@ -161,6 +184,7 @@ form.big-form input,
     height: 38px;
     background: #fff;
 }
+
 form.big-form input[type=submit],
 .tabs form input[type=submit] {
     background: #F3A774;
@@ -170,6 +194,7 @@ form.big-form input[type=submit],
     -moz-border-radius: 0.3rem;
     border-radius: 0.3rem;
 }
+
 form.big-form input[type=submit]:hover,
 .tabs form input[type=submit]:hover {
     cursor: pointer;
@@ -178,21 +203,27 @@ form.big-form input[type=submit]:hover,
     font-size: 0.8rem;
     line-height: 1.4rem;
 }
+
 .PANTRY-row {
-    color: rgb(88, 188, 208);
+    color: rgb(44, 178, 192);
 }
+
 .FRIDGE-row {
     color: rgb(168, 150, 234);
 }
+
 .FREEZER-row {
-    color: rgb(114, 203,246);
+    color: rgb(93, 141, 255);
 }
+
 .PRODUCE-row {
     color: rgb(238, 128, 153);
 }
+
 .OTHER-row {
-    color: rgb(94,227,163);
+    color: rgb(32, 191, 141);
 }
+
 /* Media Query */
 @media only screen and (max-width: 1024px) {
     form.big-form {
@@ -203,40 +234,46 @@ form.big-form input[type=submit]:hover,
     }
     .tabs form {
         height: 300px;
-        flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
         flex-direction: column;
         -ms-flex-direction: column;
         -webkit-flex-direction: column;
+        flex-wrap: wrap;
     }
     .tabs form input {
         margin: 0.3rem 0;
     }
 }
+
 @media only screen and (max-width: 736px) {
     header {
         height: 108px;
     }
+
     header ul {
-        flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
+
     header ul li {
         display: inline-block;
         width: 33.3%;
         text-align: center;
     }
+
     header ul li a {
         height: 54px;
         width: 100%;
     }
 }
+
 @media only screen and (max-width: 568px) {
-    .table-heading {
+    .data-table-heading {
         display: none;
     }
+
     div ul {
         -moz-flex-direction: column;
         -ms-flex-direction: column;
@@ -244,21 +281,25 @@ form.big-form input[type=submit]:hover,
         flex-direction: column;
         position: relative;
     }
+
     div ul li {
         margin: 0.2rem 0 0 1rem;
     }
+
     div ul li span {
         display: block;
         font-weight: 700;
         font-size: 0.8rem;
         color: #1A294E;
     }
+
     .PANTRY-row, .FREEZER-row, .FRIDGE-row, .OTHER-row, .PRODUCE-row {
         position: absolute;
         right: 0;
         top: 0;
         width: 100px;
     }
+
     .item-row {
         height: 140px;
     }
