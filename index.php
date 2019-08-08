@@ -10,8 +10,16 @@ $request = generateRequest($category);
 $db = connectDB();
 $groceryItems = getData($db, $request);
 $groceryItemsArray = processData($groceryItems);
-$inputValidation = inputValidation($item, $category, $price, $remaining);
-$insertToDb = insertDataIntoDb($db, $inputValidation);
+
+// fine
+
+if($item && $category && $price && $remaining) {
+    $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
+    $message = $item . ' added to database';
+} else {
+    $errorMsg = 'Please type in text values in \'item\' and select one from \'category\' fields, number value in \'price\' and \'remaining\' fields.';
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -47,7 +55,7 @@ $insertToDb = insertDataIntoDb($db, $inputValidation);
                             <option value="produce">Produce</option>
                             <option value="other">Other</option>
                         </select>
-                        <input type="text" name="price" placeholder="price (£)" required>
+                        <input type="text" name="price" placeholder="price (pence)" required>
                         <input type="text" name="remaining" placeholder="remaining (%)" required>
                         <input type="submit" value="Submit">
                     </form>
@@ -67,9 +75,13 @@ $insertToDb = insertDataIntoDb($db, $inputValidation);
                 <option value="produce">Produce</option>
                 <option value="other">Other</option>
             </select>
-            <input type="text" name="price" placeholder="price (£)" required>
+            <input type="text" name="price" placeholder="price (pence)" required>
             <input type="text" name="remaining" placeholder="remaining (%)" required>
             <input type="submit" value="Submit">
+            <p><?php
+//                ((isset($_GET['item']) && (isset($_GET['category']) && (isset($_GET['price']) && (isset($_GET['remaining']))? echo $message; : echo $errorMsg;
+                ?>
+            </p>
         </form>
     </section>
     <div class="data-table">

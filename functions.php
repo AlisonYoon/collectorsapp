@@ -110,39 +110,41 @@ function currentFilter(string $category):string {
         <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
         <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>");
     }
-
-    /**
-     * inputValidation function takes string$item, string$category, int$price, int$remaining (all should come from $_GET) and return either a INSERT query or error message.
-     * @param string $item
-     * @param string $category
-     * @param int $price
-     * @param int $remaining
-     * @return string
-     */
-    function inputValidation(string $item, string $category, int $price, int $remaining):string
-    {
-        if($_GET['item']) {
-            if(is_string($item) && is_string($category) && is_numeric($price) && is_numeric($price) ) {
-                $insertToDB = 'INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (`item`, `category`, `price`, `remaining`)';
-                return $insertToDB;
-            } else {
-                $errorMsg = '<p>Please type in string values in \'item\' and \'category\' fields, number value in \'price\' and \'remaining\' fields.</p>';
-                echo $errorMsg;
-            }
-        }
-    }
-
-    function insertDataIntoDb(PDO $db, string $insertToDB)
-    {
-        if($_GET['item'] && $_GET['category'] && $_GET['price'] && $_GET['remaining']) {
-        $db->setAttribute(
-            PDO::ATTR_DEFAULT_FETCH_MODE,
-            PDO::FETCH_ASSOC
-        );
-
-        $sql = $db->prepare($insertToDB);
-        $insert = $sql->execute();
-        return $insert;
-        }
-    }
 }
+
+/**
+ * inputValidation function takes string$item, string$category, int$price, int$remaining (all should come from $_GET) and return either a INSERT query or error message.
+ * @param string $item
+ * @param string $category
+ * @param int $price
+ * @param int $remaining
+ * @return string
+ */
+function inputValidation(PDO $db, string $item, string $category, int $price, int $remaining)
+{
+//    var_dump($item);
+    $category ='PRODUCE';
+//    var_dump($price);
+//    var_dump($remaining);
+        $insertToDB  = $db->prepare('INSERT INTO `grocery_item` (`item`, `category`, `price`, `remaining`) VALUES (:item, :category, :price, :remaining);');
+        $insertToDB->bindParam(':item', $item, PDO::PARAM_STR );
+        $insertToDB->bindParam(':category', $category, PDO::PARAM_STR );
+        $insertToDB->bindParam(':price', $price, PDO::PARAM_INT );
+        $insertToDB->bindParam(':remaining', $remaining, PDO::PARAM_INT );
+        $insertToDB->execute();
+
+}
+
+//function insertDataIntoDb(PDO $db, string $insertToDB)
+//{
+//    if($_GET['item'] && $_GET['category'] && $_GET['price'] && $_GET['remaining']) {
+//        $db->setAttribute(
+//            PDO::ATTR_DEFAULT_FETCH_MODE,
+//            PDO::FETCH_ASSOC
+//        );
+//
+//        $sql = $db->prepare($insertToDB);
+//        $insert = $sql->execute();
+//        return $insert;
+//    }
+//}
