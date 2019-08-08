@@ -1,6 +1,6 @@
 <?php
 
-require_once '../function.php';
+require_once '../functions.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -47,5 +47,28 @@ class FunctionTest extends TestCase
 
         $this->expectException(TypeError::class);
         processData($someNum);
+    }
+
+    public function testCurrentFilter_ShouldTakeStringReturnString()
+    {
+        $dummyCategory = "freezer";
+
+        $result = currentFilter($dummyCategory);
+        $expectedReseult = "<li><a class=\"all\" href=\"index.php?category=all\">All</a></li>
+        <li><a class=\"pantry\" href=\"index.php?category=pantry\">Pantry</a></li>
+        <li><a class=\"fridge\" href=\"index.php?category=fridge\">Fridge</a></li>
+        <li><a class=\"freezer current\" href=\"index.php?category=freezer\">Freezer</a></li>
+        <li><a class=\"produce\" href=\"index.php?category=produce\">Produce</a></li>
+        <li><a class=\"other\" href=\"index.php?category=other\">Other</a></li>";
+
+        $this->assertEquals($result, $expectedReseult);
+    }
+
+    public function testCurrentFilter_ShouldReturnTypeError()
+    {
+        $dummyArray = [['item'=>'milk', 'category'=>'OTHER', 'price'=>3204, "remaining"=>50], ['item'=>'randoms', 'category'=>'OTHER', 'price'=>100, "remaining"=>0]];
+
+        $this->expectException(TypeError::class);
+        currentFilter($dummyArray);
     }
 }
