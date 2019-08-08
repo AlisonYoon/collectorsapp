@@ -51,7 +51,7 @@ $groceryItemsArray = processData($groceryItems);
                         <p>
                             <?php
                             if(!is_null($item) && $category && !is_null($price)  && !is_null($remaining)) {
-                                if((int)$price > 0) {
+                                if((int)$price > 0  && (int)$remaining > 0) {
                                     $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
                                     $message = $item . ' added to database';
                                 } else {
@@ -83,8 +83,9 @@ $groceryItemsArray = processData($groceryItems);
             <input type="submit" value="Submit">
             <p>
                 <?php
-                    if(!is_null($item) && $category && !is_null($price)  && !is_null($remaining)) {
-                        if((int)$price > 0) {
+                    if(!is_null($item) && $category && !is_null($price) && !is_null($remaining)) {
+//                        var_dump($remaining);
+                        if((int)$price > 0 && (int)$remaining > 0) {
                             $inputValidation = inputValidation($db, $item, $category, $price, $remaining);
                             $message = $item . ' added to database';
                         } else {
